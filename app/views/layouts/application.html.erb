@@ -20,12 +20,19 @@
           $(".ui.dropdown").dropdown();
       });
   </script>
+  
   </head>
 
   <body>
     <%= render "layouts/navbar" %>
     <div class="ui container">
-      <%= yield %>
+      <%= render "layouts/messages" %>
+      <%= yield %>      
     </div>
+    <script>
+    $('.message .close').on('click', function() {
+    $(this).closest('.message').transition('fade');
+  });
+  </script>
   </body>
 </html>
